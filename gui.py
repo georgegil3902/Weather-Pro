@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import (QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox)
-from PyQt6.QtGui import QFont
-from PyQt6.QtCore import Qt
+from PySide6.QtWidgets import (QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox)
+from PySide6.QtGui import QFont
+from PySide6.QtCore import Qt
 
 class GuiApp(QWidget):
     def __init__(self, weather_instance):
