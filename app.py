@@ -1,13 +1,16 @@
-from api_client import Weather
-from cline_interface import Cline
+from weather import Weather
+from gui import GuiApp
+import sys
+from PyQt6.QtWidgets import QApplication
 
-
-
-
-if __name__=='__main__':
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    
+    # Initialize weather API module
     weather = Weather()
-    face = Cline()
-    face.start()
-    city = face.cityentry()
-    weather_data = weather.get_weather(place=city)
-    face.view_weather(weather_data)
+    
+    # Initialize GUI and pass the weather instance
+    weather_app = GuiApp(weather)
+    weather_app.show()
+    
+    sys.exit(app.exec())
