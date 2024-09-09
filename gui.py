@@ -9,7 +9,7 @@ class GuiApp(QWidget):
         self.weather_instance = weather_instance  # Use the weather instance passed from app.py
         
         # Set up the window
-        self.setWindowTitle("Skycast")
+        self.setWindowTitle("Weather Pro")
         self.setStyleSheet("background-color: #2C3E50;")  # Dark navy blue background
         self.setGeometry(100, 100, 400, 400)
         
@@ -17,22 +17,23 @@ class GuiApp(QWidget):
         layout = QVBoxLayout()
 
         # Title label
-        title_label = QLabel("Skycast")
+        title_label = QLabel("Weather Pro")
         title_label.setFont(QFont("Helvetica", 24, QFont.Weight.Bold))
         title_label.setStyleSheet("color: white;")
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(title_label)
 
         # City input field
-        city_label = QLabel("Enter city:")
-        city_label.setFont(QFont("Helvetica", 14))
-        city_label.setStyleSheet("color: white;")
-        layout.addWidget(city_label)
+        # city_label = QLabel("Enter city:")
+        # city_label.setFont(QFont("Helvetica", 14))
+        # city_label.setStyleSheet("color: white;")
+        # layout.addWidget(city_label)
 
-        self.city_input = QLineEdit()
-        self.city_input.setFont(QFont("Helvetica", 14))
-        self.city_input.setStyleSheet("background-color: #BDC3C7; padding: 5px; border-radius: 5px;")
-        layout.addWidget(self.city_input)
+        self.search_city = QLineEdit()
+        self.search_city.setPlaceholderText("Search City")
+        self.search_city.setFont(QFont("Helvetica", 14))
+        self.search_city.setStyleSheet("background-color: #BDC3C7; padding: 5px; border-radius: 5px;")
+        layout.addWidget(self.search_city)
 
         # Get Weather Button
         get_weather_button = QPushButton("Get Weather")
@@ -58,7 +59,7 @@ class GuiApp(QWidget):
         self.setLayout(layout)
 
     def get_weather(self):
-        city = self.city_input.text()
+        city = self.search_city.text()
         if not city:
             QMessageBox.critical(self, "Error", "Please enter a city.")
             return
