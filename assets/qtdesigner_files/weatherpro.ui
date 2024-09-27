@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>aappllication</class>
+ <widget class="QWidget" name="aappllication">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="background" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>700</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #0b131f;
+border-radius: 20px;
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);</string>
+   </property>
+   <widget class="QFrame" name="navigation">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>80</width>
+      <height>660</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #202b3b;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="app_icon">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>25</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Icon</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="weather_button">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>150</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>weather</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cities_button">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>250</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>cities</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="settings_button">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>350</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>settings</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="forcast">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>80</y>
+      <width>300</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #202b3b;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="Weekly_Forcast_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>15</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>7-Day Forcast</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>261</width>
+       <height>531</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="weekly_forcast_layout">
+      <item>
+       <layout class="QHBoxLayout" name="day1_forcast_layout">
+        <item>
+         <widget class="QLabel" name="day1">
+          <property name="text">
+           <string>Today</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day1_condition">
+          <property name="text">
+           <string>Sunny</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day1_temperatures">
+          <property name="text">
+           <string>36/22</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="day2_forcast_layout">
+        <item>
+         <widget class="QLabel" name="day2">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day2_condition">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day2_temperatures">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="day3_forcast_layout">
+        <item>
+         <widget class="QLabel" name="day3">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day3_condition">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day3_temperatures">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="day4_forcast_layout">
+        <item>
+         <widget class="QLabel" name="day4">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day4_condition">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day4_temperatures">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="day5_forcast_layout">
+        <item>
+         <widget class="QLabel" name="day5">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day5_condition">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day5_temperatures">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="day6_forcast_layout">
+        <item>
+         <widget class="QLabel" name="day6">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day6_condition">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day6_temperatures">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="day7_forcast_layout">
+        <item>
+         <widget class="QLabel" name="day7">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day7_condition">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day7_temperatures">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="todaysforcast">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>330</y>
+      <width>740</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#202b3b;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="Todays_Forcast_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>15</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Todays Forcast</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>701</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="todays_forcast_layout">
+      <item>
+       <layout class="QVBoxLayout" name="todays_forcast1">
+        <item>
+         <widget class="QLabel" name="time1">
+          <property name="text">
+           <string>6:00 AM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="condition1">
+          <property name="text">
+           <string>condition1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="temperature1">
+          <property name="text">
+           <string>25</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="todays_forcast2">
+        <item>
+         <widget class="QLabel" name="time2">
+          <property name="text">
+           <string>9:00 AM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="condition2">
+          <property name="text">
+           <string>condition2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="temperature2">
+          <property name="text">
+           <string>28</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="todays_forcast3">
+        <item>
+         <widget class="QLabel" name="time3">
+          <property name="text">
+           <string>12:00 PM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="condition3">
+          <property name="text">
+           <string>condition3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="temperature3">
+          <property name="text">
+           <string>33</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="todays_forcast4">
+        <item>
+         <widget class="QLabel" name="time3_2">
+          <property name="text">
+           <string>3:00 PM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="condition4">
+          <property name="text">
+           <string>condition4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="temperature4">
+          <property name="text">
+           <string>34</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="todays_forcast5">
+        <item>
+         <widget class="QLabel" name="time3_3">
+          <property name="text">
+           <string>6:00 PM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="condition5">
+          <property name="text">
+           <string>condition5</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="temperature5">
+          <property name="text">
+           <string>32</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="todays_forcast6">
+        <item>
+         <widget class="QLabel" name="time3_4">
+          <property name="text">
+           <string>9:00 PM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="condition6">
+          <property name="text">
+           <string>condition6</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="temperature6">
+          <property name="text">
+           <string>30</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="airconditions">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>510</y>
+      <width>740</width>
+      <height>170</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #202b3b;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="Air_Conditions_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>15</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Air Conditions</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Real_Feel_label">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>50</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Real Feel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="feel_temperature">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>80</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>30</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Chance_of_Rain_label">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>110</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Chance of Rain</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="chance_of_rain">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>140</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0%</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Wind_label">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>50</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Wind</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="windspeed">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>80</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.2 Km/h</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="UV_Index_label">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>110</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>UV Index</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="uv_index">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>140</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="thermometer_icon">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>50</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>thermometericon</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="rain_drop_icon">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>110</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>RainDropIcon</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="wind_icon">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>50</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>windIcon</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sun_icon">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>110</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SunIcon</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="current_city">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>110</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">text-align: left;
+font-size: 30px;
+font-weight: bold;
+font-family: 'Ubuntu';</string>
+    </property>
+    <property name="text">
+     <string>Verlin</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="current_condition">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>100</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Condition</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="current_temperature">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>230</y>
+      <width>191</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Temperature</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="city_input">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>740</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #202b3b;</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
