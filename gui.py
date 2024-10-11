@@ -5,9 +5,14 @@ from PySide6.QtGui import QPixmap, QIcon
 import sys
 
 class WeatherProGui(object):
-    def setupUi(self, application, api_client):
+    def setupUi(self, application, api_client=None):
 
         self.api_client = api_client
+
+        # Initialise current weather variables
+        self.current_city = ""
+        self.current_condition = ""
+        self.current_temperature = "°C"
 
         # Set up main window
         application.setObjectName("application")
@@ -19,7 +24,6 @@ class WeatherProGui(object):
         self.background.setStyleSheet("""
             background-color: #0b131f;
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         """)
 
         # Initialize storage for forecast days and hourly forecasts
@@ -27,14 +31,39 @@ class WeatherProGui(object):
         self.hourly_forecasts = {}
 
         # Create components
+        self.create_current_weather()
         self.create_navigation()
         self.create_forecast()
         self.create_todays_forecast()
         self.create_air_conditions()
-        self.create_main_elements()
 
         # Translate UI elements
         self.retranslateUi(application)
+
+    def create_current_weather(self):
+        """Create current weather section at the top."""
+        # If api_client is available, get current weather data
+        if self.api_client is not None:
+            self.current_city = self.api_client.current_city()
+            self.current_temperature = self.api_client.current_condition()
+            self.current_temperature = self.api_client.current_temperature()
+
+        # Current weather data labels
+        self.current_city_label = QLabel(self.current_city, self.background)        
+        self.current_city_label.setGeometry(QRect(150, 110, 300, 50))
+        self.current_city_label.setStyleSheet("font-size: 30px; font-weight: bold;")
+
+        self.current_condition_label = QLabel(self.current_condition, self.background)
+        self.current_condition_label.setGeometry(QRect(640, 100, 200, 200))
+
+        self.current_temperature_label = QLabel(self.current_temperature, self.background)
+        self.current_temperature_label.setGeometry(QRect(150, 230, 150, 50))
+        self.current_temperature_label.setStyleSheet("font-size: 15px; font-weight: bold;")
+
+        # City input field
+        self.city_input = QLineEdit(self.background)
+        self.city_input.setGeometry(QRect(120, 20, 740, 50))
+        self.city_input.setStyleSheet("background-color: #202b3b;")
 
     def create_navigation(self):
         """Create navigation buttons with icons on the left."""
@@ -184,22 +213,6 @@ class WeatherProGui(object):
 
         # Optionally, you can store these labels if you need to update them later.
 
-    def create_main_elements(self):
-        """Create current weather section at the top."""
-        self.current_city = QLabel("Berlin", self.background)
-        self.current_city.setGeometry(QRect(150, 110, 300, 50))
-        self.current_city.setStyleSheet("font-size: 30px; font-weight: bold;")
-
-        self.current_condition = QLabel("Sunny", self.background)
-        self.current_condition.setGeometry(QRect(640, 100, 200, 200))
-
-        self.current_temperature = QLabel("36°C", self.background)
-        self.current_temperature.setGeometry(QRect(150, 230, 150, 50))
-
-        # City input field
-        self.city_input = QLineEdit(self.background)
-        self.city_input.setGeometry(QRect(120, 20, 740, 50))
-        self.city_input.setStyleSheet("background-color: #202b3b;")
 
     def retranslateUi(self, application):
         application.setWindowTitle("Weather Pro")
