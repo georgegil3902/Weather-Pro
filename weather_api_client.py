@@ -1,3 +1,4 @@
+import pprint
 import requests
 
 class Weather:
@@ -9,6 +10,8 @@ class Weather:
             'forecast':'/forecast.json',
         },
     }
+
+    current_weather = {}
 
     @property
     def weatherapis(cls):
@@ -27,7 +30,7 @@ class Weather:
         location, weather = response['location'], response['current']
         date, time = location['localtime'].split(' ')
         
-        return {
+        cls.current_weather = {
             'location':{
                 'country' : location['country'],
                 'state' : location['region'],
@@ -41,15 +44,29 @@ class Weather:
             'temperaure_in_celcius' : weather['temp_c'],
             'temperaure_in_fahrenheit' : weather['temp_f'],
             'humidity' : weather['humidity'],
-            'condition' : weather['condition']['text'],
+            'condition' : weather['condition'],
             'wind_kph' : weather['wind_kph'],
             'wind_mph' : weather['wind_mph'],
             'uv' : weather['uv'],
         }
+        return cls.current_weather
+
+    def get_current_city(cls):
+        return cls.current_weather['location']['city']
+
+    def get_current_temperature(cls):
+        return cls.current_weather['temperaure_in_celcius']
+
+    def get_current_condition(cls):
+        return cls.current_weather['condition']
 
 
 if __name__=='__main__':
     inst = Weather()
     data = inst.get_weather('Schweinfurt')
-    for key in data:
-        print(data[key])
+    # for key in data:
+    #     print(key, " : ", data[key])
+    print(inst.get_current_city())
+    print(inst.get_current_temperature())
+    print(inst.get_current_condition())
+    print("https:" + inst.get_current_condition()["icon"])
