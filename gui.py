@@ -5,7 +5,10 @@ from PySide6.QtGui import QPixmap, QIcon
 import sys
 
 class WeatherProGui(object):
-    def setupUi(self, application):
+    def setupUi(self, application, api_client):
+
+        self.api_client = api_client
+
         # Set up main window
         application.setObjectName("application")
         application.resize(1200, 700)
